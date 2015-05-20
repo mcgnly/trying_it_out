@@ -17,16 +17,13 @@ def randomChar():
 for i in range(len(personText)):
     monkeyText.append(randomChar())
 
-#join that list up into a string to print
-monkeyText = ''.join(monkeyText)
 print(monkeyText)
-
 #initialize a count to see how many iterations it takes
 count = 0
 
 #now to start randomizing the individual positions until they match, upper bound at a million
-while (personText != monkeyText and count < 1000000):
-    #turn it back into a list so we can work with it
+while personText != monkeyText and count < 1000000:
+    #turn it into a list so we can work with it
     newMonkey = list(monkeyText)
 
     #step through each character if it doesn't match
@@ -34,10 +31,12 @@ while (personText != monkeyText and count < 1000000):
         if personText[j] != c:
             newMonkey[j] = randomChar()
             monkeyText = ''.join(newMonkey)
+
     #increment counter to tell how many tries it took
     count += 1
     #print out iteration until it matches original text
     print(monkeyText)
+
 
 #print results
 if count < 1000000:
