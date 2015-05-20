@@ -40,3 +40,15 @@ a = WikiPage(wikiName, wikiLinks)
 print(a.name)
 
 
+#make a tree
+class node(object):
+    def __init__(self, value, children = []):
+        self.value = value
+        self.children = children
+
+    def insert(self, item, links = []):
+        if self.value == item:
+            return #do nothing
+        else:
+            for i in range (10):
+                self.children[i]= node(item,links[])
